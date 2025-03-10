@@ -4,39 +4,49 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Фотогалерея</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/header.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/page.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/gallery.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/footer.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250306111401">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/header.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/page.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/gallery.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/footer.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250310141144">
 </head>
 <body id="Фотогалерея">
 	<div class="wrapper">
 		<header class="header">
-	<div class="container">
+	<div class="container header__container">
 		<div class="header__top">
-			<div class="row">
+			<div class="row header__row">
 				<div class="col">
 					<div class="header__address">
 						<p>
 							<i class="icon-mark"></i>
-							<span>Запорожская область, г. Бердянск, ул. Макарова, 22 Р</span>
+							<span>Запорожская область,<br>г. Бердянск, ул. Макарова, 22 Р</span>
 						</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="header__tels">
-						<i class="icon-phone"></i>
-						<a href="tel:+79902970184">+7 (990) 297-01-84</a>
-						<a href="tel:+79902970185">+7 (990) 297-01-85</a>
-						<a href="tel:+79901148306">+7 (990) 114-83-06</a>
+						<a href="tel:+79902970184"><i class="icon-phone"></i>+7 (990) 297-01-84</a>
+						<a href="tel:+79902970185"><i class="icon-phone d-none"></i>+7 (990) 297-01-85</a>
+						<a href="tel:+79901148306"><i class="icon-phone d-none"></i>+7 (990) 114-83-06</a>
 					</div>
 				</div>
+				<nav class="header__nav nav nav--mob">
+					<ul>
+						<li><a href="/" data-page="Главная">Главная</a></li>
+						<li><a href="/rooms.html" data-page="Номера">Номера</a></li>
+						<li><a href="/prices.html" data-page="Цены">Цены</a></li>
+						<li><a href="/gallery.html" data-page="Фотогалерея">Фотогалерея</a></li>
+						<li><a href="/services.html" data-page="Услуги">Услуги</a></li>
+						<li><a href="/contacts.html" data-page="Контакты">Контакты</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 		<div class="header__menu">
-			<a href="/" class="logo">SOFITEL</a>
+			<a href="/" class="logo logo-hd">SOFITEL</a>
+			<span class="logo logo-mob-menu mob_menu_btn">MENU</span>
 			<nav class="header__nav nav">
 				<ul>
 					<li><a href="/" data-page="Главная">Главная</a></li>
@@ -49,6 +59,9 @@
 			</nav>
 			<div class="header__btn">
 				<a href="#form" class="btn">Бронирование номера</a>
+				<div class="burger mob_menu_btn">
+					<span></span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -58,10 +71,10 @@
 				<div class="container">
 					<div class="page-bunner__heading">
 						<h1 class="page-bunner__title">Фотогалерея</h1>
-						<p class="page-bunner__subtitle">
+						<p class="page-bunner__text">
 							Азовское море становится все более популярным среди туристов, и это неудивительно! Здесь вас ждут теплые воды, мягкий климат, доступные цены и великолепная природа.
 						</p>
-						<p class="page-bunner__subtitle">
+						<p class="page-bunner__text">
 							«Sofitel» предлагает гостям современный сервис, удобные номера и широкий выбор услуг, чтобы каждый мог насладиться отдыхом в полной мере.
 						</p>
 					</div>
@@ -71,7 +84,7 @@
 			<section class="section">
 				<article class="article">
 					<div class="container">
-						<div class="gallery">
+						<div class="gallery" id="gallery">
 							<picture><source srcset="./img/photos/sofitel_1.webp" type="image/webp"><img src="./img/photos/sofitel_1.jpg" alt="sofitel_1"></picture>
 							<picture><source srcset="./img/photos/sofitel_2.webp" type="image/webp"><img src="./img/photos/sofitel_2.jpg" alt="sofitel_2"></picture>
 							<picture><source srcset="./img/photos/sofitel_3.webp" type="image/webp"><img src="./img/photos/sofitel_3.jpg" alt="sofitel_3"></picture>
@@ -122,8 +135,13 @@
 		<footer class="footer">
 	<div class="container">
 		<div class="footer__top">
-			<div class="row">
-				<div class="col">
+			<div class="row footer__row">
+				<div class="col footer__col footer__info footer__info--mob">
+					<span>@2025 «Sofitel», все права защищены</span>
+					<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
+				</div>
+				<div class="col footer__col">
+					<span class="footer__col-title">Местоположение</span>
 					<div class="footer__address">
 						<p>
 							<i class="icon-mark"></i>
@@ -131,13 +149,17 @@
 						</p>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col footer__col">
+					<span class="footer__col-title">Позвоните нам</span>
 					<div class="footer__tels">
 						<i class="icon-phone"></i>
 						<a href="tel:+79902970184">+7 (990) 297-01-84</a>
 						<a href="tel:+79902970185">+7 (990) 297-01-85</a>
 						<a href="tel:+79901148306">+7 (990) 114-83-06</a>
 					</div>
+				</div>
+				<div class="col footer__col footer__logo footer__logo--mob">
+					<a href="/" class="logo logo--white">SOFITEL</a>
 				</div>
 			</div>
 		</div>
@@ -155,23 +177,24 @@
 			</nav>
 			<div class="footer__info">
 				<span>@2025 «Sofitel», все права защищены</span>
-				<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
+				<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
 			</div>
 		</div>
 	</div>
 </footer>
 		<div class="popup" id="imagePopup">
-			<div class="popup-content">
-				<span class="close-btn">&times;</span>
-				<div class="slider">
-					<button class="prev-btn">&#10094;</button>
-					<div class="popup-img">
-						<img id="popupImage" src="" alt="Popup Image">
-					</div>
-					<button class="next-btn">&#10095;</button>
-				</div>
+	<div class="popup-content">
+		<span class="close-btn"></span>
+		<div class="slider">
+			<div class="prev-btn">&#10094;</div>
+			<div class="popup-img">
+				<img id="popupImage" src="" alt="Popup Image">
 			</div>
+			<div class="next-btn">&#10095;</d>
 		</div>
+	</div>
+</div>
+		
 	</div>
 
 	<script>
@@ -215,9 +238,9 @@
 
 	</script>
 
-	<script src="./js/checkWebp.min.js?_v=20250306111401" defer></script>
-	<script src="./js/app.min.js?_v=20250306111401" defer></script>
-	<script src="./js/gallery.js?_v=20250306111401" defer></script>
+	<script src="./js/checkWebp.min.js?_v=20250310141144" defer></script>
+	<script src="./js/app.min.js?_v=20250310141144" defer></script>
+	<script src="./js/gallery.js?_v=20250310141144" defer></script>
 
 </body>
 </html>

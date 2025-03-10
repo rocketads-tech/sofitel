@@ -4,37 +4,50 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Контакты</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/header.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="css/footer.min.css?_v=20250306111401">
-	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250306111401">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/header.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/contacts.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="css/footer.min.css?_v=20250310141144">
+	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250310141144">
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20250310141144" type="text/javascript"></script>
 </head>
 <body id="Контакты">
 	<div class="wrapper">
 		<header class="header">
-	<div class="container">
+	<div class="container header__container">
 		<div class="header__top">
-			<div class="row">
+			<div class="row header__row">
 				<div class="col">
 					<div class="header__address">
 						<p>
 							<i class="icon-mark"></i>
-							<span>Запорожская область, г. Бердянск, ул. Макарова, 22 Р</span>
+							<span>Запорожская область,<br>г. Бердянск, ул. Макарова, 22 Р</span>
 						</p>
 					</div>
 				</div>
 				<div class="col">
 					<div class="header__tels">
-						<i class="icon-phone"></i>
-						<a href="tel:+79902970184">+7 (990) 297-01-84</a>
-						<a href="tel:+79902970185">+7 (990) 297-01-85</a>
-						<a href="tel:+79901148306">+7 (990) 114-83-06</a>
+						<a href="tel:+79902970184"><i class="icon-phone"></i>+7 (990) 297-01-84</a>
+						<a href="tel:+79902970185"><i class="icon-phone d-none"></i>+7 (990) 297-01-85</a>
+						<a href="tel:+79901148306"><i class="icon-phone d-none"></i>+7 (990) 114-83-06</a>
 					</div>
 				</div>
+				<nav class="header__nav nav nav--mob">
+					<ul>
+						<li><a href="/" data-page="Главная">Главная</a></li>
+						<li><a href="/rooms.html" data-page="Номера">Номера</a></li>
+						<li><a href="/prices.html" data-page="Цены">Цены</a></li>
+						<li><a href="/gallery.html" data-page="Фотогалерея">Фотогалерея</a></li>
+						<li><a href="/services.html" data-page="Услуги">Услуги</a></li>
+						<li><a href="/contacts.html" data-page="Контакты">Контакты</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 		<div class="header__menu">
-			<a href="/" class="logo">SOFITEL</a>
+			<a href="/" class="logo logo-hd">SOFITEL</a>
+			<span class="logo logo-mob-menu mob_menu_btn">MENU</span>
 			<nav class="header__nav nav">
 				<ul>
 					<li><a href="/" data-page="Главная">Главная</a></li>
@@ -47,17 +60,43 @@
 			</nav>
 			<div class="header__btn">
 				<a href="#form" class="btn">Бронирование номера</a>
+				<div class="burger mob_menu_btn">
+					<span></span>
+				</div>
 			</div>
 		</div>
 	</div>
 </header>
 		<main class="main">
-			<div class="container">
-				
+			<div class="map">
+				<div class="map__wrapper">
+					<div class="container">
+						<div class="map__info">
+							<h1 class="map__title">
+								Контактные данные
+							</h1>
+							<span class="map__address">
+								Запорожская область, г.&nbsp;Бердянск, ул.&nbsp;Макарова,&nbsp;22&nbsp;Р
+							</span>
+							<ul class="map__contacts-list">
+								<li><a href="tel:+79902970184">+7 (990) 297-01-84</a></li>
+								<li><a href="tel:+79902970185">+7 (990) 297-01-85</a></li>
+								<li><a href="tel:+79901148306">+7 (990) 114-83-06</a></li>
+							</ul>
+							<p class="map__contacts">
+								<span class="title">Email: </span>
+								<a href="mailto:otel-sofitel@mail.ru">otel-sofitel@mail.ru</a>
+							</p>
+							<p class="map__contacts">
+								<span class="title">Часы работы: </span>
+								<a href="mailto:otel-sofitel@mail.ru">пн. - пт. с 08:00 до 21:00</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="map__container" id="map"></div>
 			</div>
-
-		</main>
-		<section class="section" id="booking">
+			<section class="section" id="booking">
 	<article class="article">
 		<div class="container">
 			<div class="section__heading heading">
@@ -79,11 +118,18 @@
 		</div>
 	</article>
 </section>
+		</main>
+		
 		<footer class="footer">
 	<div class="container">
 		<div class="footer__top">
-			<div class="row">
-				<div class="col">
+			<div class="row footer__row">
+				<div class="col footer__col footer__info footer__info--mob">
+					<span>@2025 «Sofitel», все права защищены</span>
+					<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
+				</div>
+				<div class="col footer__col">
+					<span class="footer__col-title">Местоположение</span>
 					<div class="footer__address">
 						<p>
 							<i class="icon-mark"></i>
@@ -91,13 +137,17 @@
 						</p>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col footer__col">
+					<span class="footer__col-title">Позвоните нам</span>
 					<div class="footer__tels">
 						<i class="icon-phone"></i>
 						<a href="tel:+79902970184">+7 (990) 297-01-84</a>
 						<a href="tel:+79902970185">+7 (990) 297-01-85</a>
 						<a href="tel:+79901148306">+7 (990) 114-83-06</a>
 					</div>
+				</div>
+				<div class="col footer__col footer__logo footer__logo--mob">
+					<a href="/" class="logo logo--white">SOFITEL</a>
 				</div>
 			</div>
 		</div>
@@ -115,15 +165,72 @@
 			</nav>
 			<div class="footer__info">
 				<span>@2025 «Sofitel», все права защищены</span>
-				<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
+				<span>Site by <a href="https://rocket-ads.ru">RocketADS🚀</a></span>
 			</div>
 		</div>
 	</div>
 </footer>
 	</div>
 
-	<script src="./js/checkWebp.min.js?_v=20250306111401" defer></script>
-	<script src="./js/app.min.js?_v=20250306111401" defer></script>
+	<script>
+		ymaps.ready(init);
+
+		function init() {
+			var initialCenter = [46.662265, 36.798479];
+			var zoomVal = 16;
+			var myMap = new ymaps.Map("map", {
+				center: initialCenter,
+				zoom: zoomVal
+			});
+
+			 myMap.behaviors.disable('scrollZoom');
+
+			var myPlacemark = new ymaps.Placemark(
+				[46.662265, 36.798479],
+				{
+					hintContent: "Отель Sfitel",
+					balloonContent: "Отель окружен уникальной природой, способствующей восстановлению сил и душевному равновесию."
+				},
+				{
+					iconLayout: "default#image",
+					iconImageHref: "./img/map-mark.png",
+					iconImageSize: [40, 65],
+					iconImageOffset: [-20, -40]
+				}
+			);
+			 window.addEventListener('resize', function () {
+				myMap.container.fitToViewport(); // Это заставит карту подстраиваться под размер окна
+			});
+
+			myMap.geoObjects.add(myPlacemark);
+
+			// Удаляем ненужные элементы управления
+			myMap.controls.remove('trafficControl');
+			myMap.controls.remove('typeSelector');
+			myMap.controls.remove('searchControl');
+			myMap.controls.remove('routeEditor');
+			myMap.controls.remove('copyrights');
+			
+			// Функция для обновления центра карты в зависимости от ширины экрана
+			function updateCenter() {
+				var screenWidth = window.innerWidth;
+
+				
+				if (screenWidth > 992) {
+					myMap.setCenter([initialCenter[0], initialCenter[1] - 0.005]); // Изменяем координаты на 500px вправо
+				} else {
+					 myMap.setCenter([initialCenter[0] - 0.0027, initialCenter[1]]); // Изменяем координаты на 270px вверх
+				}
+			}
+
+			updateCenter();
+
+			window.addEventListener('resize', updateCenter);
+		}
+	</script>
+
+	<script src="./js/checkWebp.min.js?_v=20250310141144" defer></script>
+	<script src="./js/app.min.js?_v=20250310141144" defer></script>
 
 </body>
 </html>
