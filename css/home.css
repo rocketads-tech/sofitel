@@ -1054,7 +1054,7 @@
   }
 
   .home-bunner__bunner-contacts {
-    margin: 0 auto 0;
+    margin: 30px auto 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -1104,6 +1104,10 @@
 }
 
 @media (max-width: 600px) {
+  .home-bunner__heading {
+    gap: 18px;
+  }
+
   .home-bunner__title h1 {
     font-size: 42px;
   }
