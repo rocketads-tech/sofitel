@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+.map {
+  width: 100%;
+  margin-bottom: 50px;
+  height: 728px;
+  position: relative;
+}
+
+.map__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 128px 0;
+}
+
+.map__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.map__info {
+  max-width: 471px;
+  width: 100%;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 3;
+}
+
+.map__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  color: var(--clr-main);
+}
+
+.map__address {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 131%;
+  color: #2d2d2d;
+}
+
+.map__contacts-list {
+  margin: 30px 0;
+}
+
+.map__contacts-list li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.map__contacts-list li a {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: #272727;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.map__contacts-list li a:hover {
+  color: var(--clr-main);
+}
+
+.map__contacts {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131%;
+  color: #272727;
+}
+
+.map__contacts .title {
+  font-weight: 700;
+}
+
+.map__contacts a {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.map__contacts a:hover {
+  color: var(--clr-main);
+}
+
+[class*=ymaps-2-1-79-gototech] {
+  display: none !important;
+  /* Убирает "Создать свою карту" */
+}
+
+@media (max-width: 1230px) {
+  .map__info {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 992px) {
+  .map__wrapper {
+    margin: 0;
+    padding: 0 50px;
+  }
+
+  .map__info {
+    max-width: 760px;
+    width: 98%;
+    margin-left: 0;
+    padding: 20px 50px;
+    gap: 10px;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.062745098);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.062745098);
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .map__title {
+    font-size: 30px;
+  }
+
+  .map__contacts-list {
+    margin: 15px 0;
+  }
+
+  .map__contacts-list li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .map__contacts-list li a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 595px) {
+  .map__info {
+    padding: 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map__wrapper {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 445px) {
+  .map__title {
+    font-size: 28px;
+  }
+
+  .map__contacts {
+    font-size: 14px;
+  }
+}

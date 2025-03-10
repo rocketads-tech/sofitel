@@ -464,6 +464,10 @@ main {
      object-fit: cover;
 }
 
+.card__img img {
+  height: 100%;
+}
+
 .card__content {
   padding: 50px 30px;
   display: -webkit-box;
