@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeBtn = document.querySelector(".close-btn");
   const prevBtn = document.querySelector(".prev-btn");
   const nextBtn = document.querySelector(".next-btn");
-  const images = document.querySelectorAll(".gallery img");
+  const images = document.querySelectorAll("#gallery img");
   let currentIndex = 0;
   let startX = 0;
   let endX = 0;
   let isAnimating = false;
+  let isKeyPressed = false; // Флаг для предотвращения быстрых переключений
+console.log(images)
 
   function openPopup(index) {
     currentIndex = index;
@@ -26,13 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isAnimating) return;
     isAnimating = true;
 
-    const isSwipe = direction === "swipe-left" || direction === "swipe-right";
     let animationClass = "";
 
     if (direction === 1 || direction === "swipe-left") {
-      animationClass = "slide-left";
+      animationClass = "slide-right"; // Слайд влево
     } else if (direction === -1 || direction === "swipe-right") {
-      animationClass = "slide-right";
+      animationClass = "slide-left"; // Слайд вправо
     }
 
     popupImage.classList.add(animationClass);
@@ -69,10 +70,17 @@ document.addEventListener("DOMContentLoaded", function () {
   prevBtn.addEventListener("click", () => showPrev("button"));
 
   document.addEventListener("keydown", (e) => {
-    if (popup.style.display === "flex") {
+    if (popup.style.display === "flex" && !isKeyPressed) {
+      isKeyPressed = true;
+
       if (e.key === "ArrowRight") showNext("button");
       if (e.key === "ArrowLeft") showPrev("button");
       if (e.key === "Escape") closePopup();
+
+      // Устанавливаем задержку перед разрешением следующего нажатия клавиши
+      setTimeout(() => {
+        isKeyPressed = false;
+      }, 500); // Задержка в 500 миллисекунд
     }
   });
 
@@ -92,9 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
   popup.addEventListener("touchend", () => {
     const diff = startX - endX;
     if (diff > 50) {
-      showNext("swipe");
+      showNext("swipe-left");
     } else if (diff < -50) {
-      showPrev("swipe");
+      showPrev("swipe-right");
     }
   });
 });

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // aspect-ratio
   const images = document.querySelectorAll(".mini-slider img");
 
   // Отсдеживание и динамическое изменение высоты изображений
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateImageHeight(image);
     };
   });
-// animation
+
   let isDesktop = window.innerWidth > 768;
   let classes = getAnimationClasses();
 
@@ -120,16 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         img.style.zIndex = 2;
         rotateBackward();
-      } else if (img.classList.contains("first")) {
-        img.style.zIndex = 1;
-        images.forEach((image) => {
-          if (image.classList.contains("second")) {
-            image.style.zIndex = 2;
-          } else {
-            image.style.zIndex = 1;
-          }
-        });
-        rotateForward();
       }
     });
   });
