@@ -3,16 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Контакты</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/header.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/contacts.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/footer.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250310144929">
 
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&_v=20250310144929" type="text/javascript"></script>
+	<title>SOFITEL Бердянск | Идеальный отдых на Бердянской косе</title>
+
+	<meta name="description"
+		content="Погрузитесь в атмосферу спокойствия и комфорта в отеле SOFITEL на Бердянской косе. Отличное место для отдыха на Азовском побережье">
+
+	<link rel="stylesheet" href="./css/style.min.css?_v=20250311152102">
+
 </head>
-<body id="Контакты">
+<body id="Контакты" data-page="contacts">
 	<div class="wrapper">
 		<header class="header">
 	<div class="container header__container">
@@ -172,65 +172,7 @@
 </footer>
 	</div>
 
-	<script>
-		ymaps.ready(init);
-
-		function init() {
-			var initialCenter = [46.662265, 36.798479];
-			var zoomVal = 16;
-			var myMap = new ymaps.Map("map", {
-				center: initialCenter,
-				zoom: zoomVal
-			});
-
-			 myMap.behaviors.disable('scrollZoom');
-
-			var myPlacemark = new ymaps.Placemark(
-				[46.662265, 36.798479],
-				{
-					hintContent: "Отель Sofitel",
-					balloonContent: "Отель окружен уникальной природой, способствующей восстановлению сил и душевному равновесию."
-				},
-				{
-					iconLayout: "default#image",
-					iconImageHref: "./img/map-mark.png",
-					iconImageSize: [40, 65],
-					iconImageOffset: [-20, -40]
-				}
-			);
-			 window.addEventListener('resize', function () {
-				myMap.container.fitToViewport(); // Это заставит карту подстраиваться под размер окна
-			});
-
-			myMap.geoObjects.add(myPlacemark);
-
-			// Удаляем ненужные элементы управления
-			myMap.controls.remove('trafficControl');
-			myMap.controls.remove('typeSelector');
-			myMap.controls.remove('searchControl');
-			myMap.controls.remove('routeEditor');
-			myMap.controls.remove('copyrights');
-			
-			// Функция для обновления центра карты в зависимости от ширины экрана
-			function updateCenter() {
-				var screenWidth = window.innerWidth;
-
-				
-				if (screenWidth > 992) {
-					myMap.setCenter([initialCenter[0], initialCenter[1] - 0.005]); // Изменяем координаты на 500px вправо
-				} else {
-					 myMap.setCenter([initialCenter[0] - 0.0027, initialCenter[1]]); // Изменяем координаты на 270px вверх
-				}
-			}
-
-			updateCenter();
-
-			window.addEventListener('resize', updateCenter);
-		}
-	</script>
-
-	<script src="./js/checkWebp.min.js?_v=20250310144929" defer></script>
-	<script src="./js/app.min.js?_v=20250310144929" defer></script>
+	<script src="./js/app.min.js?_v=20250311152102" defer></script>
 
 </body>
 </html>

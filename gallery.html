@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Фотогалерея</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/header.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/page.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/gallery.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/footer.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250310144929">
+	
+	<title>SOFITEL Бердянск | Идеальный отдых на Бердянской косе</title>
+	
+	<meta name="description"
+		content="Погрузитесь в атмосферу спокойствия и комфорта в отеле SOFITEL на Бердянской косе. Отличное место для отдыха на Азовском побережье">
+		
+	<link rel="stylesheet" href="./css/style.min.css?_v=20250311152102">
 </head>
-<body id="Фотогалерея">
+<body id="Фотогалерея" data-page="gallery">
 	<div class="wrapper">
 		<header class="header">
 	<div class="container header__container">
@@ -197,50 +197,7 @@
 		
 	</div>
 
-	<script>
-		let galleryScript = null;
-
-			function resetGalleryStyles() {
-				document.querySelectorAll(".gallery img").forEach((img) => {
-					img.style.width = "";
-				});
-				document.querySelectorAll(".gallery picture").forEach((picture) => {
-					picture.style.width = "";
-				});
-			}
-
-			function updateGalleryScript() {
-				const screenWidth = window.innerWidth;
-
-				if (screenWidth > 768) {
-					if (!galleryScript) {
-						galleryScript = document.createElement("script");
-						galleryScript.src = "./js/masonry.min.js?v=" + Date.now();
-						galleryScript.onload = () => {
-							console.log("masonry.min.js загружен");
-							if (typeof initMasonry === "function") {
-								initMasonry(); // Запускаем функцию после загрузки
-							}
-						};
-						document.body.appendChild(galleryScript);
-					}
-				} else {
-					if (galleryScript) {
-						resetGalleryStyles(); // Перед удалением сбрасываем стили
-						document.body.removeChild(galleryScript);
-						galleryScript = null;
-					}
-				}
-			}
-
-			window.addEventListener("load", updateGalleryScript);
-			window.addEventListener("resize", updateGalleryScript);
-
-	</script>
-
-	<script src="./js/checkWebp.min.js?_v=20250310144929" defer></script>
-	<script src="./js/app.min.js?_v=20250310144929" defer></script>
-	<script src="./js/gallery.js?_v=20250310144929" defer></script>
+	<script src="./js/app.min.js?_v=20250311152102" defer></script>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 function initMasonry() {
-  // const images = document.querySelectorAll(".gallery img");
+
    const images = document.querySelectorAll(
      ".gallery picture, .gallery img:not(picture img)"
    );
-  const gap = 16; // Расстояние между изображениями
-  const containerWidth = document.querySelector(".gallery").offsetWidth; // Ширина контейнера
+  const gap = 16;
+  const containerWidth = document.querySelector(".gallery").offsetWidth;
 
   // Считаем gap в процентах от ширины контейнера
   const gapPercentage = ((gap * 2) / containerWidth) * 100;
@@ -32,7 +32,7 @@ function initMasonry() {
         img.style.width = "25%";
       });
     } else {
-      // Если сумма ширин больше или меньше доступной, уменьшаем ширину изображений
+      // Если сумма ширин больше или меньше доступной, меняем ширину изображений
       if (totalWidth > availableWidth) {
         group.forEach((img) => {
           let scaleFactor = availableWidth / totalWidth;

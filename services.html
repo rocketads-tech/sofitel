@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Услуги</title>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/header.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/page.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/services.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="css/footer.min.css?_v=20250310144929">
-	<link rel="stylesheet" href="assets/icon/ifontsstyle.css?_v=20250310144929">
+	
+	<title>SOFITEL Бердянск | Идеальный отдых на Бердянской косе</title>
+	
+	<meta name="description"
+		content="Погрузитесь в атмосферу спокойствия и комфорта в отеле SOFITEL на Бердянской косе. Отличное место для отдыха на Азовском побережье">
+		
+	<link rel="stylesheet" href="./css/style.min.css?_v=20250311152102">
 </head>
-<body id="Услуги">
+<body id="Услуги" data-page="services">
 	<div class="wrapper">
 		<header class="header">
 	<div class="container header__container">
@@ -281,40 +281,7 @@
 </footer>
 	</div>
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// aspect-ratio
-			const items = document.querySelectorAll(".service-card");
-
-			items.forEach(item => {
-				// Отсдеживание и динамическое изменение высоты изображений
-				const img = item.querySelector('.service-card__img')
-				function updateImageHeight(item) {
-					const aspectRatio = 555 / 320
-					
-					const newHeight = img.offsetWidth / aspectRatio;
-					img.style.height = `${newHeight}px`;
-				}
-
-				const resizeObserver = new ResizeObserver((entries) => {
-					entries.forEach((entry) => {
-						updateImageHeight(entry.target);
-					});
-				});
-
-				items.forEach((item) => {
-					resizeObserver.observe(item);
-					item.onload = () => {
-						updateImageHeight(item);
-					};
-				});
-				updateImageHeight()
-			})
-			
-		})
-	</script>
-	<script src="./js/checkWebp.min.js?_v=20250310144929" defer></script>
-	<script src="./js/app.min.js?_v=20250310144929" defer></script>
+	<script src="./js/app.min.js?_v=20250311152102" defer></script>
 
 </body>
 </html>
